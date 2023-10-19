@@ -1,5 +1,4 @@
 import { Component, ContentChild, TemplateRef } from '@angular/core';
-import { ZippyContentDirective } from '../app-example-zippy-content.directive';
 
 @Component({
   selector: 'app-my-card',
