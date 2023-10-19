@@ -7,9 +7,4 @@ import { Component, ContentChild, TemplateRef } from '@angular/core';
 })
 export class MyCardComponent {
   show = false;
-  @ContentChild('xd') content!: TemplateRef<unknown>;
-
-  ngAfterViewInit(){
-    console.log(this.content)
-  }
 }
