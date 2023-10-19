@@ -1,5 +1,4 @@
-import { Component, ContentChild, TemplateRef } from '@angular/core';
-import { ZippyContentDirective } from '../app-example-zippy-content.directive';
+import { Component, ContentChild, Input, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'app-my-card',
@@ -8,9 +7,8 @@ import { ZippyContentDirective } from '../app-example-zippy-content.directive';
 })
 export class MyCardComponent {
   show = false;
-  @ContentChild('xd') content!: TemplateRef<unknown>;
 
-  ngAfterViewInit(){
-    console.log(this.content)
-  }
+  @Input() hookShow!: Function;
+
+  @Input() isNesting:boolean = false;
 }

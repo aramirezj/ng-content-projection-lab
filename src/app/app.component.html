@@ -1,20 +1,37 @@
 <!-- Basic Content Projection -->
-<h1>Basic Content Projection</h1>
+<h1>Content Projection dynamic with Input</h1>
 <h2>Hello world AppComponent</h2>
+<button (click)="show = !show">Show/Unshow from AppComponent {{show}}</button>
 <app-my-card>
-  <h3>Basic Content Projection from AppComponent</h3>
+  <app-my-dumb input name="Alejandro" *ngIf="show"></app-my-dumb>
 </app-my-card>
 <hr>
 <hr>
 <hr>
-<h1>Content Projection with names</h1>
+<h1>Content Projection with hook for showing</h1>
 <h2>Hello world AppComponent</h2>
-<app-my-card>
-  <h3 customName>Content Projection with names from AppComponent</h3>
+<button (click)="show2 = !show2">Show/Unshow from AppComponent {{show2}}</button>
+<app-my-card [hookShow]="hookShow.bind(this)">
+  <app-my-dumb name="Alejandro" *ngIf="show2"></app-my-dumb>
 </app-my-card>
 <hr>
 <hr>
 <hr>
+<h1>Content Projection with nesting</h1>
+<h2>Hello world AppComponent</h2>
+<app-my-card [isNesting]="true">
+  <ng-container nesting>
+    <app-my-dumb name="Ramírez">
+      <app-my-super-dumb></app-my-super-dumb>
+    </app-my-dumb>
+  </ng-container>
+
+</app-my-card>
+<hr>
+<hr>
+<hr>
+
+
 
 <!--
   Content projection, single, multiple with selects, and conditions

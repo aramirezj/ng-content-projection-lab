@@ -9,6 +9,6 @@ export class MyDumbComponent {
   @Input({required:true}) name!: string;
 
   ngOnInit(){
-    console.log('Me inicio!'+this.name)
+    console.log('Me inicio! '+this.name)
   }
 }

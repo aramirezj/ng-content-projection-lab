@@ -1,12 +1,20 @@
-<div>
+<div *ngIf="!hookShow && !isNesting">
+	<button (click)="show = !show">Show/Unshow from Card {{show}}</button>
+	<ng-content select="[input]" *ngIf="show"></ng-content>
+</div>
+
+<div *ngIf="hookShow && !isNesting">
+	<button (click)="hookShow()">Show/Unshow with hook</button>
 	<ng-content></ng-content>
 </div>
 
 
-
-<div>
-	<ng-content select="[customName]"></ng-content>
+<div *ngIf="isNesting">
+	<p>Nesting activated - card</p>
+	<ng-content select="[nesting]"></ng-content>
 </div>
+
+
 
 
 
