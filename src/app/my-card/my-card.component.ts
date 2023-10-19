@@ -10,5 +10,9 @@ export class MyCardComponent {
 
   @Input() hookShow!: Function;
 
-  @Input() isNesting:boolean = false;
+  @ContentChild('microfrontPoderoso') microfrontPoderoso!: TemplateRef<unknown>;
+
+  ngAfterViewInit(){
+    console.log(this.microfrontPoderoso);
+  }
 }

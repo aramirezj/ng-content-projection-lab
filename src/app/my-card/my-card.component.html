@@ -1,41 +1,4 @@
-<div *ngIf="!hookShow && !isNesting">
+<div>
 	<button (click)="show = !show">Show/Unshow from Card {{show}}</button>
-	<ng-content select="[input]" *ngIf="show"></ng-content>
+	<ng-container *ngIf="show" [ngTemplateOutlet]="microfrontPoderoso"></ng-container>
 </div>
-
-<div *ngIf="hookShow && !isNesting">
-	<button (click)="hookShow()">Show/Unshow with hook</button>
-	<ng-content></ng-content>
-</div>
-
-
-<div *ngIf="isNesting">
-	<p>Nesting activated - card</p>
-	<ng-content select="[nesting]"></ng-content>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-  Content projection, single, multiple with selects, and conditions
-<button (click)="show = !show">Toggle show</button>
-<p>Default ng-content</p>
-<div>
-<ng-content *ngIf="show"></ng-content>
-</div>
-
-<p>Question ng-content:</p>
-<div>
-	<ng-content select="[question]"></ng-content>
-</div>
--->
