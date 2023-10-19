@@ -1,0 +1,33 @@
+<div>
+	<ng-content></ng-content>
+</div>
+
+
+
+<div>
+	<ng-content select="[customName]"></ng-content>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!--
+  Content projection, single, multiple with selects, and conditions
+<button (click)="show = !show">Toggle show</button>
+<p>Default ng-content</p>
+<div>
+<ng-content *ngIf="show"></ng-content>
+</div>
+
+<p>Question ng-content:</p>
+<div>
+	<ng-content select="[question]"></ng-content>
+</div>
+-->

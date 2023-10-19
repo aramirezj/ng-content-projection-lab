@@ -3,10 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MyCardComponent } from './my-card/my-card.component';
+import { MyDumbComponent } from './my-dumb/my-dumb.component';
+import { ZippyContentDirective } from './app-example-zippy-content.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MyCardComponent,
+    MyDumbComponent
   ],
   imports: [
     BrowserModule,
